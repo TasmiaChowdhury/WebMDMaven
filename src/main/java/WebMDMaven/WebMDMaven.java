@@ -27,12 +27,28 @@ public class WebMDMaven {
 		
 		WebElement searchDoc = driver.findElement(By.xpath("//*[@id=\"searchkeywords_desktop\"]"));
 		WebElement zipCode = driver.findElement(By.xpath("//*[@id=\"searchlocation_desktop\"]"));
-		WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"serp-block-form\"]/div/div/div[4]/div/div/button"));
+		WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"serp-block-form\"]/div/div/div[4]/div/div/button/span"));
 
 		//pass the data input 
 		searchDoc.sendKeys("eye doctor");
-		zipCode.sendKeys("11001");
+		zipCode.sendKeys("");
 		submitButton.click();
+		System.out.println(driver.getTitle());
+		
+		driver.navigate().back(); // this will navigate back
+		driver.navigate().back();// brings to home page
+		
+		WebElement findDentist = driver.findElement(By.xpath("//*[@id=\"ContentPane1\"]/nav/div/div[2]/ul[1]/li[4]/a"));
+		findDentist.click();
+		
+		WebElement searchDentist = driver.findElement(By.xpath("//*[@id=\"searchkeywords_desktop\"]"));
+		WebElement zipforDentist=driver.findElement(By.xpath("//*[@id=\"searchlocation_desktop\"]"));
+		WebElement submitForDentist = driver.findElement(By.xpath("//*[@id=\"serp-block-form\"]/div/div/div[4]/div/div/button"));
+		
+		searchDentist.sendKeys("");
+		zipforDentist.sendKeys("");
+		submitForDentist.click();
+		System.out.println(driver.getTitle());
 		
 		
 	}
