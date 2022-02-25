@@ -24,6 +24,8 @@ public class WebMDMaven {
 		WebElement findADoctor = driver.findElement(By.xpath("//*[@id=\"ContentPane1\"]/nav/div[1]/div[2]/ul[1]/li[3]/a"));
 		findADoctor.click();
 		
+		System.out.println(driver.getTitle());
+		
 		
 		WebElement searchDoc = driver.findElement(By.xpath("//*[@id=\"searchkeywords_desktop\"]"));
 		WebElement zipCode = driver.findElement(By.xpath("//*[@id=\"searchlocation_desktop\"]"));
@@ -50,7 +52,24 @@ public class WebMDMaven {
 		submitForDentist.click();
 		System.out.println(driver.getTitle());
 		
+		driver.navigate().back(); 
+		driver.navigate().back();
 		
+		WebElement connectCare =driver.findElement(By.xpath("//*[@id=\"ContentPane1\"]/nav/div[1]/div[2]/ul[1]/li[5]/a"));
+		connectCare.click();
+		System.out.println(driver.getTitle());
+		
+		
+		WebElement addictionRecovery=driver.findElement(By.xpath("//*[@id=\"ContentPane29\"]/aside/div/div[2]/div[1]/div[2]/div[2]/div[2]/a/div"));
+		addictionRecovery.click();
+		System.out.println(driver.getTitle());
+		driver.navigate().back();
+		
+		
+		WebElement vapingHelp=driver.findElement(By.xpath("//*[@id=\"ContentPane29\"]/aside/div/div[2]/div[2]/div[2]/div[2]/div[2]/a/div"));
+		vapingHelp.click();
+		System.out.println(driver.getTitle());
+		driver.navigate().back();
 	}
 
 }
